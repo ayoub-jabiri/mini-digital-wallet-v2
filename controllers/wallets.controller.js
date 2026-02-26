@@ -10,7 +10,11 @@ const wallets = JSON.parse(
 
 const controllers = {
     getWallets(req, res) {
-        res.json(wallets.slice(0, req.query.limit));
+        if (req.query.limit) {
+            res.json(wallets.slice(0, req.query.limit));
+        } else {
+            res.json(wallets);
+        }
     },
     getSingleWallet(req, res) {
         // Search for the wallet
@@ -87,7 +91,7 @@ const controllers = {
             });
         }
     },
-    deletWallet(req, res) {
+    deleteWallet(req, res) {
         // Check if the wallet exists
         const walletIndex = wallets.findIndex((us) => us.id == req.params.id);
 
@@ -185,23 +189,11 @@ const controllers = {
 };
 
 const updateWalletsModel = () => {
-    fs.writeFileSync(
-        "./models/wallets.model.json",
-        JSON.stringify(wallets),
-        () => {
-            if (error) console.log(error);
-        }
-    );
+    fs.writeFileSync("./models/wallets.model.json", JSON.stringify(wallets));
 };
 
 const updateHistoryModel = () => {
-    fs.writeFile(
-        "./models/history.model.json",
-        JSON.stringify(history),
-        (error) => {
-            if (error) console.log(error);
-        }
-    );
+    fs.writeFile("./models/history.model.json", JSON.stringify(history));
 };
 
 module.exports = controllers;

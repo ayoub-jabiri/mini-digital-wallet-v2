@@ -5,7 +5,7 @@ const {
     getSingleWallet,
     addWallets,
     updateWallet,
-    deletWallet,
+    deleteWallet,
     deposit,
     withdraw,
 } = require("../controllers/wallets.controller");
@@ -18,7 +18,7 @@ walletsRouter.get("/", getWallets);
 walletsRouter.get("/:id", getSingleWallet);
 walletsRouter.post("/", addWallets);
 walletsRouter.put("/:id", updateWallet);
-walletsRouter.delete("/:id", deletWallet);
+walletsRouter.delete("/:id", deleteWallet);
 walletsRouter.put("/:id/deposit", deposit);
 walletsRouter.put("/:id/withdraw", checkAmount, withdraw);
 

@@ -96,9 +96,7 @@ const controllers = {
 };
 
 const updateUsersModel = () => {
-    fs.writeFileSync("./models/users.model.json", JSON.stringify(users), () => {
-        if (error) console.log(error);
-    });
+    fs.writeFileSync("./models/users.model.json", JSON.stringify(users));
 };
 
 module.exports = controllers;
