@@ -1,5 +1,12 @@
-const wallets = require("../models/wallets.model"),
-    users = require("../models/users.model");
+const fs = require("node:fs");
+
+const wallets = JSON.parse(
+        fs.readFileSync("./models/wallets.model.json", "utf-8")
+    ),
+    users = JSON.parse(fs.readFileSync("./models/users.model.json", "utf-8")),
+    history = JSON.parse(
+        fs.readFileSync("./models/history.model.json", "utf-8")
+    );
 
 const controllers = {
     getWallets(req, res) {
@@ -42,6 +49,8 @@ const controllers = {
             };
             wallets.push(newWallet);
 
+            updateWalletsModel();
+
             res.status(201).json(newWallet);
         } else {
             return res.status(404).json({
@@ -60,6 +69,8 @@ const controllers = {
             if (data.name) {
                 // Update the wallet info
                 wallets[walletIndex].name = data.name;
+
+                updateWalletsModel();
 
                 res.json({
                     message: "The wallet info has been updated successfully!",
@@ -83,6 +94,8 @@ const controllers = {
         if (walletIndex != -1) {
             wallets.splice(walletIndex, 1);
 
+            updateWalletsModel();
+
             res.json({
                 message: "The wallet has been deleted successfully!",
             });
@@ -104,6 +117,17 @@ const controllers = {
             if (data.sold) {
                 // Increase the wallet sold
                 wallets[walletIndex].sold += data.sold;
+
+                // Save the operation in the history
+                history.push({
+                    wallet_id: wallets[walletIndex].id,
+                    operation_date: new Date().toLocaleString(),
+                    operation_type: "Deposit",
+                    operation_amount: data.sold,
+                });
+
+                updateWalletsModel();
+                updateHistoryModel();
 
                 res.json({
                     message: `The operation is completed and the current sold: ${wallets[walletIndex].sold}`,
@@ -134,6 +158,17 @@ const controllers = {
                     // Decrease the wallet sold
                     wallets[walletIndex].sold -= data.sold;
 
+                    // Save the operation in the history
+                    history.push({
+                        wallet_id: wallets[walletIndex].id,
+                        operation_date: new Date().toLocaleString(),
+                        operation_type: "Withdraw",
+                        operation_amount: data.sold,
+                    });
+
+                    updateWalletsModel();
+                    updateHistoryModel();
+
                     res.json({
                         message: `The operation is completed and the current sold: ${wallets[walletIndex].sold}`,
                     });
@@ -154,6 +189,26 @@ const controllers = {
             });
         }
     },
+};
+
+const updateWalletsModel = () => {
+    fs.writeFileSync(
+        "./models/wallets.model.json",
+        JSON.stringify(wallets),
+        () => {
+            if (error) console.log(error);
+        }
+    );
+};
+
+const updateHistoryModel = () => {
+    fs.writeFile(
+        "./models/history.model.json",
+        JSON.stringify(history),
+        (error) => {
+            if (error) console.log(error);
+        }
+    );
 };
 
 module.exports = controllers;

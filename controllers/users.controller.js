@@ -1,4 +1,6 @@
-const users = require("../models/users.model");
+const fs = require("node:fs");
+
+const users = JSON.parse(fs.readFileSync("./models/users.model.json", "utf-8"));
 
 const controllers = {
     getUsers(req, res) {
@@ -37,6 +39,8 @@ const controllers = {
         };
         users.push(newUser);
 
+        updateUsersModel();
+
         res.status(201).json(newUser);
     },
     updateUser(req, res) {
@@ -52,6 +56,8 @@ const controllers = {
                 users[userIndex].name = data.name;
                 users[userIndex].email = data.email;
                 users[userIndex].phone = data.phone;
+
+                updateUsersModel();
 
                 res.json({
                     message: "The user info has been updated successfully!",
@@ -75,6 +81,8 @@ const controllers = {
         if (userIndex != -1) {
             users.splice(userIndex, 1);
 
+            updateUsersModel();
+
             res.json({
                 message: "The user has been deleted successfully!",
             });
@@ -85,6 +93,12 @@ const controllers = {
             });
         }
     },
+};
+
+const updateUsersModel = () => {
+    fs.writeFileSync("./models/users.model.json", JSON.stringify(users), () => {
+        if (error) console.log(error);
+    });
 };
 
 module.exports = controllers;
