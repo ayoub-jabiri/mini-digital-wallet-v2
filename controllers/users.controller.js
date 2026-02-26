@@ -1,12 +1,12 @@
-const model = require("../models/users.model");
+const users = require("../models/users.model");
 
 const controllers = {
     getUsers(req, res) {
-        res.json(model);
+        res.json(users);
     },
     getSingleUser(req, res) {
         // Search for the user
-        const user = model.filter((us) => us.id == req.params.id);
+        const user = users.filter((us) => us.id == req.params.id);
 
         // Check if the user exits or not
         if (user.length) {
@@ -35,7 +35,7 @@ const controllers = {
             email: data.email,
             phone: data.phone,
         };
-        model.push(newUser);
+        users.push(newUser);
 
         res.status(201).json(newUser);
     },
@@ -43,15 +43,15 @@ const controllers = {
         const data = req.body;
 
         // Check if the user exists
-        const userIndex = model.findIndex((us) => us.id == req.params.id);
+        const userIndex = users.findIndex((us) => us.id == req.params.id);
 
         if (userIndex != -1) {
             // Validate if the all the required data was given
             if (data.name && data.email && data.phone) {
                 // Update the user info
-                model[userIndex].name = data.name;
-                model[userIndex].email = data.email;
-                model[userIndex].phone = data.phone;
+                users[userIndex].name = data.name;
+                users[userIndex].email = data.email;
+                users[userIndex].phone = data.phone;
 
                 res.json({
                     message: "The user info has been updated successfully!",
@@ -70,10 +70,10 @@ const controllers = {
     },
     deletUser(req, res) {
         // Check if the user exists
-        const userIndex = model.findIndex((us) => us.id == req.params.id);
+        const userIndex = users.findIndex((us) => us.id == req.params.id);
 
         if (userIndex != -1) {
-            model.splice(userIndex, 1);
+            users.splice(userIndex, 1);
 
             res.json({
                 message: "The user has been deleted successfully!",
