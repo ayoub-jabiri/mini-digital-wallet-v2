@@ -10,11 +10,14 @@ const wallets = JSON.parse(
 
 const controllers = {
     getWallets(req, res) {
-        if (req.query.limit) {
-            res.json(wallets.slice(0, req.query.limit));
-        } else {
-            res.json(wallets);
+        if (req.query.name) {
+            const validWallets = wallets.filter(
+                (wallet) => wallet.name == req.query.name
+            );
+            return res.json(validWallets.slice(0, req.query.limit));
         }
+
+        res.json(wallets.slice(0, req.query.limit));
     },
     getSingleWallet(req, res) {
         // Search for the wallet
