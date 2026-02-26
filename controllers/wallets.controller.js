@@ -153,30 +153,23 @@ const controllers = {
         if (walletIndex != -1) {
             // Validate if the the required data was given
             if (data.sold) {
-                // Check if there is sufficent sold to be decreased
-                if (wallets[walletIndex].sold - data.sold >= 0) {
-                    // Decrease the wallet sold
-                    wallets[walletIndex].sold -= data.sold;
+                // Decrease the wallet sold
+                wallets[walletIndex].sold -= data.sold;
 
-                    // Save the operation in the history
-                    history.push({
-                        wallet_id: wallets[walletIndex].id,
-                        operation_date: new Date().toLocaleString(),
-                        operation_type: "Withdraw",
-                        operation_amount: data.sold,
-                    });
+                // Save the operation in the history
+                history.push({
+                    wallet_id: wallets[walletIndex].id,
+                    operation_date: new Date().toLocaleString(),
+                    operation_type: "Withdraw",
+                    operation_amount: data.sold,
+                });
 
-                    updateWalletsModel();
-                    updateHistoryModel();
+                updateWalletsModel();
+                updateHistoryModel();
 
-                    res.json({
-                        message: `The operation is completed and the current sold: ${wallets[walletIndex].sold}`,
-                    });
-                } else {
-                    res.status(400).json({
-                        message: `The operation cannot be completed due to no there is no sufficent sold to be decreased`,
-                    });
-                }
+                res.json({
+                    message: `The operation is completed and the current sold: ${wallets[walletIndex].sold}`,
+                });
             } else {
                 res.status(400).json({
                     error: "Missing some required data",

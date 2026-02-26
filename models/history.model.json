@@ -1,14 +1,1 @@
-[
-    {
-        "wallet_id": 1,
-        "operation_date": "2/26/2026, 12:41:20 PM",
-        "operation_type": "Deposit",
-        "operation_amount": 10
-    },
-    {
-        "wallet_id": 1,
-        "operation_date": "2/26/2026, 12:41:58 PM",
-        "operation_type": "Withdraw",
-        "operation_amount": 10
-    }
-]
+[{"wallet_id":1,"operation_date":"2/26/2026, 12:41:20 PM","operation_type":"Deposit","operation_amount":10},{"wallet_id":1,"operation_date":"2/26/2026, 12:41:58 PM","operation_type":"Withdraw","operation_amount":10},{"wallet_id":1,"operation_date":"2/26/2026, 1:45:33 PM","operation_type":"Deposit","operation_amount":10},{"wallet_id":1,"operation_date":"2/26/2026, 1:45:43 PM","operation_type":"Withdraw","operation_amount":5},{"wallet_id":1,"operation_date":"2/26/2026, 1:46:54 PM","operation_type":"Withdraw","operation_amount":5}]
