@@ -32,17 +32,12 @@ A robust, scalable, and secure digital wallet infrastructure designed to handle 
 ## 📂 Project Structure
 
 ```text
-├── src/
-│   ├── main/
-│   │   ├── java/com/wallet/
-│   │   │   ├── controller/    # API Endpoints
-│   │   │   ├── service/       # Business Logic
-│   │   │   ├── repository/    # Database Access
-│   │   │   ├── model/         # Entities & DTOs
-│   │   │   └── config/        # Security & App Config
-│   └── test/                  # Unit & Integration Tests
-├── docker-compose.yml         # Containerization
-└── pom.xml / build.gradle     # Dependency Management
+├── Folder/
+│   ├── controllers/    # API Endpoints
+│   ├── middleware/     # Middlewares Checks
+│   ├── models/         # Data Storage
+│   ├── routes/         # Routers
+│   └── server.js       # Server Set up
 ```
 
 ---
