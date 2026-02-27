@@ -46,3 +46,46 @@ A robust, scalable, and secure digital wallet infrastructure designed to handle 
 │   └── test/                  # Unit & Integration Tests
 ├── docker-compose.yml         # Containerization
 └── pom.xml / build.gradle     # Dependency Management
+
+## 🔌 API Documentation
+
+The **Mini Digital Wallet v2** provides a RESTful interface for managing users and their financial assets. All request and response bodies are in `JSON` format.
+
+### 👤 User Management
+Endpoints for handling user profiles and authentication.
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| <kbd>POST</kbd> | `/users` | Create a new user account |
+| <kbd>GET</kbd> | `/users` | Retrieve a list of all users |
+| <kbd>GET</kbd> | `/users/:id` | Get detailed information for a specific user |
+| <kbd>PUT</kbd> | `/users/:id` | Update user profile details |
+| <kbd>DELETE</kbd> | `/users/:id` | Deactivate/Remove a user account |
+
+### 💳 Wallet Operations
+Core financial endpoints for balance management and account tracking.
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| <kbd>POST</kbd> | `/wallets` | Initialize a new wallet for a user |
+| <kbd>GET</kbd> | `/wallets` | List all active wallets (Supports **Pagination** & **Filtering**) |
+| <kbd>GET</kbd> | `/wallets/:id` | Fetch specific wallet details and balance |
+| <kbd>PUT</kbd> | `/wallets/:id` | Update wallet metadata |
+| <kbd>DELETE</kbd> | `/wallets/:id` | Close a specific wallet |
+
+#### 🔍 Query Parameters (for `GET /wallets`)
+To help manage large datasets, the following query parameters are supported:
+
+* `limit` (Integer): The number of wallet records to return per page (e.g., `?limit=10`).
+* `name` (String): Filter wallets by a specific name or owner (e.g., `?name=savings`).
+
+**Example Request:**
+`GET /wallets?limit=5&name=business`
+
+### 💸 Financial Transactions
+Specialized endpoints for moving funds in and out of the system.
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| <kbd>POST</kbd> | `/wallets/:id/deposit` | **Deposit**: Add funds to the specified wallet |
+| <kbd>POST</kbd> | `/wallets/:id/withdraw` | **Withdraw**: Remove funds from the specified wallet |
