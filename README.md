@@ -46,6 +46,7 @@ A robust, scalable, and secure digital wallet infrastructure designed to handle 
 │   └── test/                  # Unit & Integration Tests
 ├── docker-compose.yml         # Containerization
 └── pom.xml / build.gradle     # Dependency Management
+```
 
 ---
 
