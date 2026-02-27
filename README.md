@@ -47,6 +47,8 @@ A robust, scalable, and secure digital wallet infrastructure designed to handle 
 ├── docker-compose.yml         # Containerization
 └── pom.xml / build.gradle     # Dependency Management
 
+---
+
 ## 🔌 API Documentation
 
 The **Mini Digital Wallet v2** provides a RESTful interface for managing users and their financial assets. All request and response bodies are in `JSON` format.
