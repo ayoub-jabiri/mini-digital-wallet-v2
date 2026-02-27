@@ -15,12 +15,9 @@ A robust, scalable, and secure digital wallet infrastructure designed to handle 
 
 ### ✨ Key Features
 
--   👤 **User Management**: Secure registration and authentication.
+-   👤 **User Management**: Secure registration.
 -   💰 **Wallet Operations**: Deposit, withdraw, and real-time balance tracking.
--   💸 **P2P Transfers**: Seamlessly send money to other users within the ecosystem.
 -   📜 **Transaction Ledger**: A comprehensive, immutable history of all financial activities.
--   🔒 **Security-First**: Implementation of transaction atomicity (ACID) to ensure no money is "lost" during transfers.
--   ⚡ **Optimized Performance**: Refactored logic from v1 for faster processing and lower latency.
 
 ---
 
