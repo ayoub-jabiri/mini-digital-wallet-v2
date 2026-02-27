@@ -11,12 +11,12 @@ A robust, scalable, and secure digital wallet infrastructure designed to handle 
 
 ## 🚀 Overview
 
-**Mini Digital Wallet v2** is an evolved version of the original digital wallet system. It provides a clean API-first approach to managing personal finances. Whether it's cashing in, peer-to-peer transfers, or viewing transaction histories, this system is built with a focus on **concurrency**, **data integrity**, and **speed**.
+**Mini Digital Wallet v2** is an evolved version of the original digital wallet system. It provides a clean API-first approach to managing personal finances, whether it's cashing in or viewing transaction histories.
 
 ### ✨ Key Features
 
 -   👤 **User Management**: Secure registration.
--   💰 **Wallet Operations**: Deposit, withdraw, and real-time balance tracking.
+-   💰 **Wallet Operations**: Secure registration, deposit, withdraw, and real-time balance tracking.
 -   📜 **Transaction Ledger**: A comprehensive, immutable history of all financial activities.
 
 ---
