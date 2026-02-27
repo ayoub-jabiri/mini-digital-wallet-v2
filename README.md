@@ -1,7 +1,7 @@
 # 💳 Mini Digital Wallet v2
 
-![GitHub repo size](https://img.shields.io/github/repo-size/ayoub-jabiri/mini-digital-wallet-v2?style=for-the-badge)
-![GitHub stars](https://img.shields.io/github/stars/ayoub-jabiri/mini-digital-wallet-v2?style=for-the-badge)
+![Trello Link](https://trello.com/invite/b/69149dad2e2b021024a407e7/ATTI11b4515c73c183fe6908a5f5f017a77e316F22F4/mini-digital-wallet-v2)
+![Canva Link]([https://img.shields.io/github/stars/ayoub-jabiri/mini-digital-wallet-v2?style=for-the-badge](https://www.canva.com/design/DAG0oNOZpgM/kQuqwsmqQKU2cG9zbkPXvQ/edit?utm_content=DAG0oNOZpgM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton))
 ![GitHub forks](https://img.shields.io/github/forks/ayoub-jabiri/mini-digital-wallet-v2?style=for-the-badge)
 ![License](https://img.shields.io/github/license/ayoub-jabiri/mini-digital-wallet-v2?style=for-the-badge)
 
