@@ -42,7 +42,7 @@ A robust, scalable, and secure digital wallet infrastructure designed to handle 
 
 ## 🔌 API Documentation
 
-The **Mini Digital Wallet v2** provides a RESTful interface for managing users and their financial assets. All request and response bodies are in `JSON` format.
+The **Mini Digital Wallet v2** provides a RESTful api endpoints for managing users and their financial assets. All request and response bodies are in `JSON` format.
 
 ### 👤 User Management
 Endpoints for handling user profiles and authentication.
