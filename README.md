@@ -3,7 +3,7 @@
 [![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)](https://trello.com/invite/b/69149dad2e2b021024a407e7/ATTI11b4515c73c183fe6908a5f5f017a77e316F22F4/mini-digital-wallet-v2)
 [![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white)](https://www.canva.com/design/DAG0oNOZpgM/kQuqwsmqQKU2cG9zbkPXvQ/edit?utm_content=DAG0oNOZpgM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-A robust, scalable, and secure digital wallet infrastructure designed to handle financial transactions, user balances, and secure transfers with high efficiency.
+A robust, scalable, and secure digital wallet infrastructure designed to handle financial transactions and user balances with high efficiency.
 
 ---
 
